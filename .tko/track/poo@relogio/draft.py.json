@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-21_16-50-50",
+            "content": "@@ -1545,20 +1545,20 @@\n nt(f%22$ %7B\n-args\n+line\n %7D%22);%0A%0A  \n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-10-21_16-59-43",
+            "content": "class Watch:\n    def __init__(self, hour: int = 0, minute: int = 0, second: int = 0):\n        self.__hour = 0;\n        self.__minute = 0;\n        self.__second = 0;\n\n    def __str__ (self) -> str:\n        hour = self.get_hour();\n        minute = self.get_minute();\n        second = self.get_second();    \n        return f\"{hour:02} : {minute:02} : {second:02}\";\n\n    def get_hour(self) -> int:\n        return self.__hour;\n\n    def get_minute(self) -> int:\n        return self.__minute;\n    \n    def get_second(self) -> int:\n        return self.__second;\n\n    def set_hour(self, value: int):\n        if value < 0 or value >23:\n            print(\"fail:Hora invalida\");\n            return;\n        self.__hour = value;\n    \n    def set_minute(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail: minuto invalido\");\n            return;\n        self.__minute = value;\n    \n    def set_second(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail:segundo invalido\");\n            return;\n        self.__second = value;\n\n    \n    def next_second(self):\n        if self.__second != 59:\n            self.__second += 1;\n        else:\n            self.__second = 0\n        if self.__minute != 59:\n            self.__minute +=1;\n        else:\n            self.__minute =0;\n            if self.__hour != 23:\n                self.__hour +=1;\n            else:\n                self.__hour =0;\n\ndef main ():\n    watch= Watch();\n    while True:\n        line = input();\n        args = line.split(\" \");\n        print(f\"$ {args}\");\n\n        match args[0]:\n            case \"show\":\n                print(watch);\n            case \"init\":\n                watch = Watch(int(args[1]), int(args[2]), int(args[3]));\n            case \"set\":\n                watch.set_hour(int(args[1]));\n                watch.set_minute(int(args[2]));\n                watch.set_second(int(args[3]));\n            case \"next\":\n                watch.next_second();\n            case \"end\":\n                break;\n            case _:\n                print(\"fail: comando invalido\");\nmain();\n\n       \n\n\n\n\n\n    \n",
+            "lines": "85"
+        }
+    ]
+}
