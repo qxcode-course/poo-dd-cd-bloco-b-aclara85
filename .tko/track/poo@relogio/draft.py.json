@@ -7,8 +7,33 @@
         },
         {
             "label": "2025-10-21_16-59-43",
-            "content": "class Watch:\n    def __init__(self, hour: int = 0, minute: int = 0, second: int = 0):\n        self.__hour = 0;\n        self.__minute = 0;\n        self.__second = 0;\n\n    def __str__ (self) -> str:\n        hour = self.get_hour();\n        minute = self.get_minute();\n        second = self.get_second();    \n        return f\"{hour:02} : {minute:02} : {second:02}\";\n\n    def get_hour(self) -> int:\n        return self.__hour;\n\n    def get_minute(self) -> int:\n        return self.__minute;\n    \n    def get_second(self) -> int:\n        return self.__second;\n\n    def set_hour(self, value: int):\n        if value < 0 or value >23:\n            print(\"fail:Hora invalida\");\n            return;\n        self.__hour = value;\n    \n    def set_minute(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail: minuto invalido\");\n            return;\n        self.__minute = value;\n    \n    def set_second(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail:segundo invalido\");\n            return;\n        self.__second = value;\n\n    \n    def next_second(self):\n        if self.__second != 59:\n            self.__second += 1;\n        else:\n            self.__second = 0\n        if self.__minute != 59:\n            self.__minute +=1;\n        else:\n            self.__minute =0;\n            if self.__hour != 23:\n                self.__hour +=1;\n            else:\n                self.__hour =0;\n\ndef main ():\n    watch= Watch();\n    while True:\n        line = input();\n        args = line.split(\" \");\n        print(f\"$ {args}\");\n\n        match args[0]:\n            case \"show\":\n                print(watch);\n            case \"init\":\n                watch = Watch(int(args[1]), int(args[2]), int(args[3]));\n            case \"set\":\n                watch.set_hour(int(args[1]));\n                watch.set_minute(int(args[2]));\n                watch.set_second(int(args[3]));\n            case \"next\":\n                watch.next_second();\n            case \"end\":\n                break;\n            case _:\n                print(\"fail: comando invalido\");\nmain();\n\n       \n\n\n\n\n\n    \n",
+            "content": "@@ -161,116 +161,8 @@\n = 0;\n-%0A    %0A        self.set_hour(hour);%0A        self.set_minute(minute);        %0A        self.set_second(second);\n %0A%0A  \n@@ -324,17 +324,19 @@\n hour:02%7D\n-:\n+ : \n %7Bminute:\n@@ -338,17 +338,19 @@\n nute:02%7D\n-:\n+ : \n %7Bsecond:\n@@ -1292,33 +1292,32 @@\n  self.__minute =\n- \n 0;%0A            i\n@@ -1543,16 +1543,17 @@\n rint(f%22$\n+ \n %7Bargs%7D%22)\n",
             "lines": "85"
+        },
+        {
+            "label": "2025-10-22_20-28-49",
+            "content": "@@ -1254,16 +1254,17 @@\n ond += 1\n+;\n %0A       \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-10-22_20-35-02",
+            "content": "@@ -1254,17 +1254,16 @@\n ond += 1\n-;\n %0A       \n@@ -1299,36 +1299,32 @@\n ond = 0%0A        \n-    \n if self.__minute\n@@ -1323,36 +1323,32 @@\n __minute != 59:%0A\n-    \n             self\n@@ -1366,38 +1366,30 @@\n =1;%0A        \n-    \n else:%0A\n-    \n             \n@@ -1415,28 +1415,24 @@\n             \n-    \n if self.__ho\n@@ -1437,28 +1437,24 @@\n hour != 23:%0A\n-    \n             \n@@ -1482,38 +1482,30 @@\n             \n-    \n else:%0A\n-    \n             \n@@ -1652,22 +1652,12 @@\n f%22$%7B\n-' '.join(\n args\n-)\n %7D%22);\n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-10-22_20-37-17",
+            "content": "@@ -747,17 +747,17 @@\n t(%22fail:\n-h\n+H\n ora inva\n@@ -915,16 +915,17 @@\n t(%22fail:\n+ \n minuto i\n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-10-22_20-39-43",
+            "content": "@@ -747,17 +747,16 @@\n t(%22fail:\n- \n hora inv\n@@ -915,17 +915,16 @@\n t(%22fail:\n- \n minuto i\n@@ -1087,17 +1087,16 @@\n t(%22fail:\n- \n segundo \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-10-22_20-41-05",
+            "content": "class Watch:\n    def __init__(self, hour: int = 0, minute: int = 0, second: int = 0):\n        self.__hour = 0;\n        self.__minute = 0;\n        self.__second = 0;\n    \n        self.set_hour(hour);\n        self.set_minute(minute);        \n        self.set_second(second);\n\n    def __str__ (self) -> str:\n        hour = self.get_hour();\n        minute = self.get_minute();\n        second = self.get_second();    \n        return f\"{hour:02}:{minute:02}:{second:02}\";\n\n    def get_hour(self) -> int:\n        return self.__hour;\n\n    def get_minute(self) -> int:\n        return self.__minute;\n    \n    def get_second(self) -> int:\n        return self.__second;\n\n    def set_hour(self, value: int):\n        if value < 0 or value >23:\n            print(\"fail: hora invalida\");\n            return;\n        self.__hour = value;\n    \n    def set_minute(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail: minuto invalido\");\n            return;\n        self.__minute = value;\n    \n    def set_second(self, value: int):\n        if value < 0 or value >59:\n            print(\"fail: segundo invalido\");\n            return;\n        self.__second = value;\n\n    \n    def next_second(self):\n        if self.__second != 59:\n            self.__second += 1;\n        else:\n            self.__second = 0\n            if self.__minute != 59:\n                self.__minute +=1;\n            else:\n                self.__minute = 0;\n                if self.__hour != 23:\n                    self.__hour +=1;\n                else:\n                    self.__hour =0;\n\ndef main ():\n    watch= Watch();\n    while True:\n        line = input();\n        args = line.split(\" \");\n        print(f\"${' '.join(args)}\");\n\n        match args[0]:\n            case \"show\":\n                print(watch);\n            case \"init\":\n                watch = Watch(int(args[1]), int(args[2]), int(args[3]));\n            case \"set\":\n                watch.set_hour(int(args[1]));\n                watch.set_minute(int(args[2]));\n                watch.set_second(int(args[3]));\n            case \"next\":\n                watch.next_second();\n            case \"end\":\n                break;\n            case _:\n                print(\"fail: comando invalido\");\nmain();\n\n       \n\n\n\n\n\n    \n",
+            "lines": "89"
         }
     ]
 }

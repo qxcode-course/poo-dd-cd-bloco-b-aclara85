@@ -3,12 +3,16 @@ class Watch:
         self.__hour = 0;
         self.__minute = 0;
         self.__second = 0;
+    
+        self.set_hour(hour);
+        self.set_minute(minute);        
+        self.set_second(second);
 
     def __str__ (self) -> str:
         hour = self.get_hour();
         minute = self.get_minute();
         second = self.get_second();    
-        return f"{hour:02} : {minute:02} : {second:02}";
+        return f"{hour:02}:{minute:02}:{second:02}";
 
     def get_hour(self) -> int:
         return self.__hour;
@@ -21,7 +25,7 @@ class Watch:
 
     def set_hour(self, value: int):
         if value < 0 or value >23:
-            print("fail:Hora invalida");
+            print("fail: hora invalida");
             return;
         self.__hour = value;
     
@@ -33,7 +37,7 @@ class Watch:
     
     def set_second(self, value: int):
         if value < 0 or value >59:
-            print("fail:segundo invalido");
+            print("fail: segundo invalido");
             return;
         self.__second = value;
 
@@ -43,21 +47,21 @@ class Watch:
             self.__second += 1;
         else:
             self.__second = 0
-        if self.__minute != 59:
-            self.__minute +=1;
-        else:
-            self.__minute =0;
-            if self.__hour != 23:
-                self.__hour +=1;
+            if self.__minute != 59:
+                self.__minute +=1;
             else:
-                self.__hour =0;
+                self.__minute = 0;
+                if self.__hour != 23:
+                    self.__hour +=1;
+                else:
+                    self.__hour =0;
 
 def main ():
     watch= Watch();
     while True:
         line = input();
         args = line.split(" ");
-        print(f"$ {args}");
+        print(f"${' '.join(args)}");
 
         match args[0]:
             case "show":
