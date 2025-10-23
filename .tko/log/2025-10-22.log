@@ -15,3 +15,19 @@
 2025-10-22 20:41:05, EXEC, v:1, k:poo@relogio, mode:FULL, rate:100, size:89
 2025-10-22 20:41:23, MOVE, v:1, k:poo@relogio, mode:BACK
 2025-10-22 20:48:10, SELF, v:1, k:poo@relogio, rate:100, alone:10, study:240
+2025-10-22 20:51:51, MOVE, v:1, k:poo@chinela, mode:DOWN
+2025-10-22 20:51:51, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-22 21:06:39, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0, size:22
+2025-10-22 21:07:47, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-22 21:07:48, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:0, size:22
+2025-10-22 21:09:04, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:100, size:21
+2025-10-22 21:09:05, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:100
+2025-10-22 21:10:03, MOVE, v:1, k:poo@chinela, mode:BACK
+2025-10-22 21:10:29, SELF, v:1, k:poo@chinela
+2025-10-22 21:20:05, MOVE, v:1, k:poo@chinela, mode:PICK
+2025-10-22 21:20:06, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:100, size:27
+2025-10-22 21:20:07, EXEC, v:1, k:poo@chinela, mode:LOCK, rate:100
+2025-10-22 21:20:12, MOVE, v:1, k:poo@chinela, mode:BACK
+2025-10-22 21:20:42, SELF, v:1, k:poo@chinela, rate:100, alone:10, study:30
+2025-10-22 21:22:13, MOVE, v:1, k:poo@roupa, mode:DOWN
+2025-10-22 21:22:14, MOVE, v:1, k:poo@roupa, mode:PICK

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-22_21-06-39",
+            "content": "@@ -345,20 +345,16 @@\n nela();%0A\n-    \n while ch\n@@ -376,20 +376,16 @@\n ) == 0:%0A\n-    \n     chin\n@@ -435,24 +435,16 @@\n %5Cn%22)))%0A%0A\n-        \n print(f%22\n@@ -507,14 +507,12 @@\n e()%7D%22)%0A%0Amain\n-()\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-10-22_21-07-48",
+            "content": "@@ -308,25 +308,32 @@\n valor;%0A%0A\n+def main():\n %0A\n- \n     \n-   \n chinela \n@@ -345,20 +345,16 @@\n nela();%0A\n-    \n     whil\n@@ -380,20 +380,16 @@\n ) == 0:%0A\n-    \n         \n@@ -523,8 +523,14 @@\n e()%7D%22)%0A%0A\n+main()\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-10-22_21-09-04",
+            "content": "@@ -277,16 +277,17 @@\n return;%0A\n+%0A\n         \n@@ -312,20 +312,9 @@\n r;%0A%0A\n-def main():\n %0A\n+\n     \n@@ -338,25 +338,16 @@\n nela();%0A\n-        %0A\n         \n@@ -393,39 +393,25 @@\n     \n-try:%0A                entrada = \n+chinela.set_size(\n int(\n@@ -421,17 +421,8 @@\n ut(%22\n-Digite o \n tama\n@@ -439,179 +439,15 @@\n nela\n- (20 a 50, pares apenas): %22))%0A                chinela.set_size(entrada);%0A            except ValueError:%0A                  print(%22fail: valor invalido%22);%0A                  \n+:%5Cn%22)))\n %0A%0A  \n@@ -528,8 +528,4 @@\n %22)%0A%0A\n-main\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-10-22_21-20-06",
+            "content": "class Chinela:\n    def __init__(self):\n        self.__size = 0;\n    \n    def get_size(self) -> int:\n        return self.__size;\n\n    def set_size(self, valor: int):\n        if valor < 20 or valor > 50 or valor % 2 !=0:\n            print(\"fail: tamanho invalido\");\n            return;\n        self.__size = valor;\n\ndef main():\n        chinela = Chinela();\n        \n        while chinela.get_size() == 0:\n            try:\n                entrada = int(input(\"Digite o tamanho da chinela (20 a 50, pares apenas): \"))\n                chinela.set_size(entrada);\n            except ValueError:\n                  print(\"fail: valor invalido\");\n                  \n\n        print(f\"Sua numera\u00e7\u00e3o de chinela tem o tamanho: {chinela.get_size()}\")\n\nmain",
+            "lines": "27"
+        }
+    ]
+}
