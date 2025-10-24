@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_21-12-31",
+            "content": "@@ -7,16 +7,19 @@\n Camisa:%0A\n+   \n  def __i\n@@ -31,16 +31,18 @@\n (self):%0A\n+  \n     self\n@@ -34,34 +34,32 @@\n lf):%0A      self.\n-__\n tamanho = %22%22%0A%0A d\n@@ -55,17 +55,24 @@\n ho = %22%22%0A\n-%0A\n+    %0A   \n  def get\n@@ -93,24 +93,28 @@\n -%3E str:%0A    \n+   \n+ \n return self.\n@@ -123,17 +123,23 @@\n tamanho%0A\n-%0A\n+   %0A   \n  def set\n@@ -151,17 +151,16 @@\n ho(self,\n- \n valor:st\n@@ -163,24 +163,27 @@\n r:str):%0A    \n+ \n+  \n tamanhosVali\n@@ -221,16 +221,19 @@\n G%22%5D%0A    \n+   \n valor = \n@@ -247,16 +247,19 @@\n pper()%0A%0A\n+   \n     if v\n@@ -291,24 +291,26 @@\n os:%0A        \n+  \n print(%22fail:\n@@ -368,252 +368,21 @@\n     \n-return%0A    %0A    self.__tamanho = valor%0A    %0Acamisa = Camisa()%0A%0Awhile camisa.getTamanho() == %22%22:%0A    print(%22Digite o seu tamanho de roupa:%22)%0A    tamanho = input()%0A    camisa.setTamanho(tamanho)%0Aprint(f%22Tamanho definido como: %7Bcamisa.getTamanho()%7D%22)\n+  return%0A       \n %0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-10-23_21-21-41",
+            "content": "class Camisa:\n def __init__(self):\n    self.__tamanho = \"\"\n\n def getTamanho(self) -> str:\n    return self.__tamanho\n\n def setTamanho(self, valor:str):\n    tamanhosValidos = [\"PP\",\"P\",\"M\",\"G\",\"GG\",\"XG\"]\n    valor = valor.upper()\n\n    if valor not in tamanhosValidos:\n        print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n        return\n    \n    self.__tamanho = valor\n    \ncamisa = Camisa()\n\nwhile camisa.getTamanho() == \"\":\n    print(\"Digite o seu tamanho de roupa:\")\n    tamanho = input()\n    camisa.setTamanho(tamanho)\nprint(f\"Tamanho definido como: {camisa.getTamanho()}\")\n",
+            "lines": "24"
+        }
+    ]
+}

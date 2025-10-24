@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_20-49-56",
+            "content": "@@ -458,17 +458,16 @@\n .split(%22\n- \n %22)%0A     \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-10-23_20-51-41",
+            "content": "@@ -566,17 +566,17 @@\n (f%22size:\n-(\n+ \n %7Broupa.g\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-10-23_20-54-01",
+            "content": "@@ -566,17 +566,16 @@\n (f%22size:\n- \n (%7Broupa.\n@@ -587,17 +587,16 @@\n manho()%7D\n-)\n %22)%0A     \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-10-23_20-55-56",
+            "content": "@@ -293,51 +293,24 @@\n il: \n-Valor\n+tamanho\n  inv\n-%C3%A1\n+a\n lido\n-, tente PP, P, M, G, GG ou XG\n %22)%0A \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-10-23_20-57-26",
+            "content": "class Roupa:\n    def __init__(self):\n        self.__tamanho = \"\"\n    \n    def getTamanho(self) -> str:\n        return self.__tamanho\n    \n    def setTamanho(self,valor:str):\n        tamanhosValidos = [\"PP\",\"P\",\"M\",\"G\",\"GG\",\"XG\"]\n\n        if valor not in tamanhosValidos:\n            print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n            return\n        \n        self.__tamanho = valor\n\nroupa = Roupa()\n\nwhile True:\n        line = input()\n        args: list[str] = line.split(\" \")\n        print(f\"${line}\")\n\n        match args[0]:\n            case \"show\":\n                print(f\"size: ({roupa.getTamanho()})\")\n                \n            case\"size\":\n                roupa.setTamanho(args[1].upper())\n\n            case \"end\":\n                break\n\n            case _:\n                print(\"fail: comando invalido\")",
+            "lines": "35"
+        }
+    ]
+}
