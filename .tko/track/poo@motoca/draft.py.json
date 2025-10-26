@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-26_18-29-18",
+            "content": "@@ -1912,16 +1912,17 @@\n %7D, time:\n+ \n %7Bself.ti\n@@ -1933,16 +1933,17 @@\n  person:\n+ \n (%7Bclient\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-26_18-30-58",
+            "content": "@@ -1127,20 +1127,24 @@\n if self.\n-time\n+duration\n  == 0:%0A \n@@ -1391,20 +1391,24 @@\n  %3E self.\n-time\n+duration\n :%0A      \n@@ -1453,20 +1453,24 @@\n r %7Bself.\n-time\n+duration\n %7D minute\n@@ -1482,36 +1482,40 @@\n            self.\n-time\n+duration\n  = 0%0A           \n@@ -1535,20 +1535,24 @@\n    self.\n-time\n+duration\n  -= dura\n@@ -1566,17 +1566,17 @@\n    def h\n-o\n+a\n nk(self)\n@@ -2387,21 +2387,15 @@\n e = \n-int (\n args%5B2%5D\n-)\n %0A   \n@@ -2584,23 +2584,22 @@\n         \n-cliente\n+Person\n  = motoc\n@@ -2623,23 +2623,22 @@\n      if \n-cliente\n+Person\n :%0A      \n@@ -2656,23 +2656,22 @@\n rint(f%22%7B\n-cliente\n+Person\n %7D%22)%0A    \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-26_18-37-42",
+            "content": "@@ -1276,35 +1276,16 @@\n cycle%22)%0A\n-            return%0A\n         \n@@ -1360,35 +1360,16 @@\n drive%22)%0A\n-            return%0A\n         \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-10-26_18-40-40",
+            "content": "class Person:\n    def __init__(self, age: int = 0, name: str = \"\"):\n        self.__age = age\n        self.__name = name\n\n    def get_name(self):\n        return self.__name\n    \n    def set_name(self, value: str):\n        self.__name = value\n\n    def get_age(self):\n        return self.__age\n    \n    def set_age(self, value: int):\n        self.__age = value\n\n    def __str__(self):\n        return f\"{self.__name}:{self.__age}\"\n    \nclass Moto:\n    def __init__(self):\n        self.cliente: Person | None = None\n        self.time:int = 0\n        self.potencia: int = 1\n    \n    def enter(self, cliente: Person):\n        if self.cliente !=None:\n            print(\"fail: busy motorcycle\")\n            return\n        self.cliente = cliente\n    \n    def leave(self) -> Person | None:\n        if self.cliente == None:\n            print(\"fail: empty motorcycle\")\n            return None\n        cliente_passado: Person = self.cliente\n        self.cliente = None\n        return f\"{cliente_passado}\"\n    \n    def buy(self, increment: int):\n        self.time += increment\n        return\n    \n    def drive(self, duration: int):\n        if self.time == 0:\n            print(\"fail: buy time first\")\n            return\n        if self.cliente == None:\n            print(\"fail: empty motorcycle\")\n            return\n        if self.cliente.get_age() > 10:\n            print(\"fail: too old to drive\")\n            return\n        if duration > self.time:\n            print(f\"fail: time finished after {self.time} minutes\")\n            self.time = 0\n            return\n        self.time -= duration\n\n    def honk(self):\n        print(\"P\" + \"e\" * self.potencia + \"m\")\n    \n    def init (self, potencia: int = 1):\n        self.cliente = None\n        self.time = 0\n        self.potencia = potencia\n        return\n    \n    def __str__(self):\n        cliente_str = \"empty\" if self.cliente == None else self.cliente\n        return f\"power:{self.potencia}, time:{self.time}, person:({cliente_str})\"\n\n\ndef main():\n    motoca = Moto()\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"init\":\n            potencia = int(args[1])\n            motoca.init(potencia)\n\n        elif args[0] == \"honk\":\n            motoca.honk()\n\n        elif args[0] == \"enter\":\n            name = args[1]\n            age = int (args[2])\n            motoca.enter(Person(age, name))\n\n        elif args[0] == \"buy\":\n            increment = int(args[1])\n            motoca.buy(increment)\n\n        elif args[0] == \"leave\":\n            cliente = motoca.leave()\n            if cliente:\n                print(f\"{cliente}\")\n        \n        elif args[0] == \"drive\":\n            duration = int(args[1])\n            motoca.drive(duration)\n\n        elif args[0] == \"show\":\n            print(motoca)\n\nmain()",
+            "lines": "112"
+        }
+    ]
+}
