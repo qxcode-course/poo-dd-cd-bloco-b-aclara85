@@ -8,17 +8,17 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\JVNS0\Desktop\poo-dd-cd-bloco-b-aclara85\.tko\cache\poo.md
-  cache_timestamp: '2025-10-23 20:49:52'
+  cache_timestamp: '2025-10-26 16:35:13'
   filters: null
 expanded:
 - poo@campanha-principal
-- poo@bloco_b-modificadores-de-acesso
 - poo@bloco_b-agregação-simples
 tasks:
   poo@chinela: '{rate:100, alone:10, study:30}'
   poo@camisa: '{rate:100, alone:10, study:30}'
   poo@roupa: '{rate:100, alone:10, study:60}'
   poo@relogio: '{rate:100, alone:10, study:240}'
+  poo@grafite: '{rate:100, alone:10, study:407}'
 flags:
   quests: 0
   tracks: 0
@@ -26,4 +26,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@chinela
+selected: poo@grafite
