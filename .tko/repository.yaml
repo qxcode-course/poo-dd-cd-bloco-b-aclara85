@@ -20,6 +20,8 @@ tasks:
   poo@relogio: '{rate:100, alone:10, study:240}'
   poo@motoca: '{rate:100, alone:10, study:516}'
   poo@grafite: '{rate:100, alone:10, study:407}'
+  poo@motouber: '{rate:100, alone:10, study:360}'
+  poo@tamagotchi: '{rate:100, alone:10, study:420}'
 flags:
   quests: 0
   tracks: 0
@@ -27,4 +29,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@tamagotchi
+selected: poo@notebook
