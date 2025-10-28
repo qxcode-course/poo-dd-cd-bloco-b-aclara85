@@ -11,7 +11,7 @@ class Battery:
         if self.__charge < 0:
             self.__charge = 0
 
-    def toLoad(self, power: int, time: int):
+    def carregar(self, power: int, time: int):
         self.__charge += power * time
         if self.__charge > self.__capacity:
             self.__charge = self.__capacity
@@ -40,9 +40,7 @@ class Not:
         self.__charger: Charger | None = None
 
     def ligar(self):
-        if self.__battery and self.__battery.hasCharge():
-            self.__on = True
-        elif self.__charger:
+        if (self.__battery and self.__battery.hasCharge()) or self.__charger:
             self.__on = True
         else:
             print("fail: não foi possível ligar")
@@ -85,14 +83,14 @@ class Not:
             self.__on = False
     
     def usar(self, time: int):
-        time = int(time)
         if not self.__on:
             print("fail: desligado")
             return
-        
+        time = int(time)
         self.__userTime += time
+        
         if self.__battery and self.__charger:
-            self.__battery.toLoad(self.__charger.getPower(), time)
+            self.__battery.carregar(self.__charger.getPower(), time)
         elif self.__battery:
             start_charge = self.__battery.getCharge()
             self.__battery.usingBattery(time)

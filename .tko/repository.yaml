@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\JVNS0\Desktop\poo-dd-cd-bloco-b-aclara85\.tko\cache\poo.md
-  cache_timestamp: '2025-10-27 18:34:44'
+  cache_timestamp: '2025-10-27 22:30:45'
   filters: null
 expanded:
 - poo@campanha-principal
@@ -18,10 +18,12 @@ tasks:
   poo@camisa: '{rate:100, alone:10, study:30}'
   poo@roupa: '{rate:100, alone:10, study:60}'
   poo@relogio: '{rate:100, alone:10, study:240}'
+  poo@notebook: '{rate:100, alone:10, study:1320}'
   poo@motoca: '{rate:100, alone:10, study:516}'
   poo@grafite: '{rate:100, alone:10, study:407}'
   poo@motouber: '{rate:100, alone:10, study:360}'
   poo@tamagotchi: '{rate:100, alone:10, study:420}'
+  poo@charger: '{rate:100, alone:10, study:20}'
 flags:
   quests: 0
   tracks: 0
